@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "PrevencionPro",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Extensión que te ayuda a completar cursos de prevención laboral en Moodle.",
   "icons": {
     "16": "img/icon16.png",
