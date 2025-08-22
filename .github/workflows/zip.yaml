@@ -1,0 +1,41 @@
+name: Zip Extension and Publish Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  zip-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get tag and commit
+        id: vars
+        run: |
+          echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          echo "COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Create zip archive
+        run: |
+          zip -r prevencion-pro-${TAG}-${COMMIT}.zip \
+            manifest.json \
+            README.md \
+            index.html \
+            LICENSE \
+            img \
+            js
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ env.TAG }}
+          name: Release ${{ env.TAG }}
+          files: prevencion-pro-${{ env.TAG }}-${{ env.COMMIT }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
