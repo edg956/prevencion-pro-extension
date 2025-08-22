@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prevención Pro Configuración</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        width: 220px;
+      }
+      select {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+      }
+      button {
+        margin-top: 10px;
+        padding: 6px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Prevención Pro Configuración</h3>
+    <label for="prevencionProPosition">Posición del botón:</label>
+    <select id="prevencionProPosition">
+      <option value="top-right">Arriba a la derecha</option>
+      <option value="top-left">Arriba a la izquierda</option>
+      <option value="bottom-right">Abajo a la derecha</option>
+      <option value="bottom-left">Abajo a la izquierda</option>
+    </select>
+    <button id="prevencionProSave">Guardar</button>
+    <p id="prevencionProStatus"></p>
+    <script src="js/popup.js"></script>
+  </body>
+</html>

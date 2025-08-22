@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "PrevencionPro",
+  "version": "1.0",
+  "description": "Extensión que te ayuda a completar cursos de prevención laboral en Moodle.",
+  "icons": {
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Moodle SCORM Helper"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["js/skorm.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["js/content.js"],
+      "css": []
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "prevencion-pro-ext@donaque.xyz",
+      "strict_min_version": "109.0"
+    }
+  }
+}
