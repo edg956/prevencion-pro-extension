@@ -15,8 +15,10 @@ saveBtn.addEventListener("click", () => {
   browserAPI.storage.sync.set(config).then(() => {
     status.textContent = "✅ Saved!";
 
-    browserAPI.tabs.query({ active: true, currentWindow: true }, tabs => {
-      browserAPI.tabs.sendMessage(tabs[0].id, { type: "config-update", config });
+    browserAPI.tabs.query({ url: "https://*/*" }).then(tabs => {
+      for (const tab of tabs) {
+        browserAPI.tabs.sendMessage(tab.id, { type: "config-update", config });
+      }
     });
 
     setTimeout(() => (status.textContent = ""), 1500);
