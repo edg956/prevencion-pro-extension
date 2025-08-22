@@ -1,4 +1,4 @@
-const browserAPI = chrome || browser;
+const browserAPI = typeof browser !== "undefined" ? browser : chrome;
 
 function sharedEventData(obj) {
   if (typeof cloneInto === 'function') {

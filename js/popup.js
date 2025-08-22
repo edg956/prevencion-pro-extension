@@ -1,4 +1,4 @@
-const browserAPI =  chrome || browser;
+const browserAPI = typeof browser !== "undefined" ? browser : chrome;
 const positionSelect = document.getElementById("prevencionProPosition");
 const saveBtn = document.getElementById("prevencionProSave");
 const status = document.getElementById("prevencionProStatus");
