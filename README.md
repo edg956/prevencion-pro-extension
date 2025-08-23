@@ -88,6 +88,9 @@ These are synced across browsers where you’re logged in:
 
 ---
 
+## ✅ Tested on
+- https://https://smartlearning.global/ (used by https://prevencontrol.com/)
+
 ## Sponsoring
 
 Looking for extra features? Consider sponsoring the project!
